@@ -1,0 +1,61 @@
+{
+  "name": "BrowserCoordinateKit",
+  "version": "1.1.1",
+  "description": "Mathematical framework for browser position calculation across different screen configurations",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest && jest --config=jest.detection.config.js && jest --config=jest.playwright.config.js",
+    "test:core": "jest",
+    "test:detection": "jest --config=jest.detection.config.js",
+    "test:playwright": "jest --config=jest.playwright.config.js",
+    "coverage": "npm test && echo 'Open coverage reports in your browser: coverage/index.html, coverage/detection/index.html, coverage/playwright/index.html'",
+    "coverage:core": "jest --coverage && echo 'Open coverage report in your browser: coverage/index.html'",
+    "coverage:detection": "jest --config=jest.detection.config.js --coverage && echo 'Open coverage report in your browser: coverage/detection/index.html'",
+    "coverage:playwright": "jest --config=jest.playwright.config.js --coverage && echo 'Open coverage report in your browser: coverage/playwright/index.html'",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "docs": "typedoc --out doc src",
+    "prepublishOnly": "npm run build",
+    "math:extract": "ts-node scripts/extractMathematicalExpressions.ts",
+    "math:report": "npm run math:extract && echo 'Mathematical reports generated in outputs/mathematics/'",
+    "validate:mathematics": "./validate_mathematics.sh"
+  },
+  "keywords": [
+    "browser",
+    "coordinate",
+    "transformation",
+    "position",
+    "dpi",
+    "scaling",
+    "mouse",
+    "screen"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.2",
+    "@typescript-eslint/parser": "^5.59.2",
+    "eslint": "^8.40.0",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "prettier": "^2.8.8",
+    "ts-jest": "^29.1.0",
+    "typedoc": "^0.24.7",
+    "typescript": "^5.0.4"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/schebz/BrowserCoordinateKit"
+  },
+  "dependencies": {
+    "mathjs": "^14.4.0"
+  }
+}

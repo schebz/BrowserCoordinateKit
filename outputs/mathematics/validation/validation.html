@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Symbolic Mathematics Validation</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.5; }
+    h1, h2, h3 { color: #333; }
+    .result { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+    .valid { background-color: #dff0d8; }
+    .invalid { background-color: #f2dede; }
+    table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+    th, td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
+    th { background-color: #f2f2f2; }
+    .formula { font-family: 'Times New Roman', serif; margin: 10px 0; padding: 10px; background-color: #f9f9f9; border-radius: 4px; }
+    .parameter { font-family: monospace; }
+    .footer { margin-top: 40px; border-top: 1px solid #ddd; padding-top: 10px; color: #777; }
+    .nav { margin: 20px 0; }
+    .nav a { margin-right: 15px; text-decoration: none; }
+  </style>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <h1>Symbolic Mathematics Validation</h1>
+  <p>This report compares symbolic mathematical calculations with actual implementation results.</p>
+
+  <div class="nav">
+    <a href="../index.html">Mathematical Overview</a>
+    <a href="../visualizations/index.html">Visualizations</a>
+  </div>
+  
+  <h2>Summary</h2>
+  <p>6 of 6 transformations validated successfully.</p>
+  
+
+  <div class="result valid">
+    <h3>Screen to Normalized Transformation</h3>
+    
+    <h4>Mathematical Formula</h4>
+    <div class="formula">
+      <p>Symbolic: x/width, y/height</p>
+      <p>LaTeX: \(\frac{x_{s_i}}{s_{wi}}, \frac{y_{s_i}}{s_{hi}}\)</p>
+    </div>
+    
+    <h4>Parameters</h4>
+    <ul>
+      <li><span class="parameter">screenDimensions</span>: width=1920, height=1080</li>
+    </ul>
+    
+    <h4>Calculation Results</h4>
+    <table>
+      <tr>
+        <th>Calculation</th>
+        <th>x</th>
+        <th>y</th>
+      </tr>
+      <tr>
+        <td>Input</td>
+        <td>960</td>
+        <td>540</td>
+      </tr>
+      <tr>
+        <td>Symbolic Output</td>
+        <td>0.5</td>
+        <td>0.5</td>
+      </tr>
+      <tr>
+        <td>Actual Output</td>
+        <td>0.5</td>
+        <td>0.5</td>
+      </tr>
+      <tr>
+        <td>Difference</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+    </table>
+    
+    <p><strong>Validation:</strong> Passed (tolerance: 0.00001)</p>
+  </div>
+
+  <div class="result valid">
+    <h3>Normalized to Screen Transformation</h3>
+    
+    <h4>Mathematical Formula</h4>
+    <div class="formula">
+      <p>Symbolic: x*width, y*height</p>
+      <p>LaTeX: \(x_n \cdot s_{wi}, y_n \cdot s_{hi}\)</p>
+    </div>
+    
+    <h4>Parameters</h4>
+    <ul>
+      <li><span class="parameter">screenDimensions</span>: width=1920, height=1080</li>
+    </ul>
+    
+    <h4>Calculation Results</h4>
+    <table>
+      <tr>
+        <th>Calculation</th>
+        <th>x</th>
+        <th>y</th>
+      </tr>
+      <tr>
+        <td>Input</td>
+        <td>0.5</td>
+        <td>0.5</td>
+      </tr>
+      <tr>
+        <td>Symbolic Output</td>
+        <td>960</td>
+        <td>540</td>
+      </tr>
+      <tr>
+        <td>Actual Output</td>
+        <td>960</td>
+        <td>540</td>
+      </tr>
+      <tr>
+        <td>Difference</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+    </table>
+    
+    <p><strong>Validation:</strong> Passed (tolerance: 0.00001)</p>
+  </div>
+
+  <div class="result valid">
+    <h3>Screen to Browser Transformation</h3>
+    
+    <h4>Mathematical Formula</h4>
+    <div class="formula">
+      <p>Symbolic: x - browserX, y - browserY</p>
+      <p>LaTeX: \(x_{s_i} - b_{xi}, y_{s_i} - b_{yi}\)</p>
+    </div>
+    
+    <h4>Parameters</h4>
+    <ul>
+      <li><span class="parameter">browserPosition</span>: x=100, y=50</li>
+    </ul>
+    
+    <h4>Calculation Results</h4>
+    <table>
+      <tr>
+        <th>Calculation</th>
+        <th>x</th>
+        <th>y</th>
+      </tr>
+      <tr>
+        <td>Input</td>
+        <td>960</td>
+        <td>540</td>
+      </tr>
+      <tr>
+        <td>Symbolic Output</td>
+        <td>860</td>
+        <td>490</td>
+      </tr>
+      <tr>
+        <td>Actual Output</td>
+        <td>860</td>
+        <td>490</td>
+      </tr>
+      <tr>
+        <td>Difference</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+    </table>
+    
+    <p><strong>Validation:</strong> Passed (tolerance: 0.00001)</p>
+  </div>
+
+  <div class="result valid">
+    <h3>Browser to Screen Transformation</h3>
+    
+    <h4>Mathematical Formula</h4>
+    <div class="formula">
+      <p>Symbolic: x + browserX, y + browserY</p>
+      <p>LaTeX: \(x_{b_i} + b_{xi}, y_{b_i} + b_{yi}\)</p>
+    </div>
+    
+    <h4>Parameters</h4>
+    <ul>
+      <li><span class="parameter">browserPosition</span>: x=100, y=50</li>
+    </ul>
+    
+    <h4>Calculation Results</h4>
+    <table>
+      <tr>
+        <th>Calculation</th>
+        <th>x</th>
+        <th>y</th>
+      </tr>
+      <tr>
+        <td>Input</td>
+        <td>860</td>
+        <td>490</td>
+      </tr>
+      <tr>
+        <td>Symbolic Output</td>
+        <td>960</td>
+        <td>540</td>
+      </tr>
+      <tr>
+        <td>Actual Output</td>
+        <td>960</td>
+        <td>540</td>
+      </tr>
+      <tr>
+        <td>Difference</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+    </table>
+    
+    <p><strong>Validation:</strong> Passed (tolerance: 0.00001)</p>
+  </div>
+
+  <div class="result valid">
+    <h3>Browser to Logical Transformation</h3>
+    
+    <h4>Mathematical Formula</h4>
+    <div class="formula">
+      <p>Symbolic: x/dpiScaling, y/dpiScaling</p>
+      <p>LaTeX: \(\frac{x_{b_i}}{\sigma_i}, \frac{y_{b_i}}{\sigma_i}\)</p>
+    </div>
+    
+    <h4>Parameters</h4>
+    <ul>
+      <li><span class="parameter">dpiScaling</span>: 1.5</li>
+    </ul>
+    
+    <h4>Calculation Results</h4>
+    <table>
+      <tr>
+        <th>Calculation</th>
+        <th>x</th>
+        <th>y</th>
+      </tr>
+      <tr>
+        <td>Input</td>
+        <td>860</td>
+        <td>490</td>
+      </tr>
+      <tr>
+        <td>Symbolic Output</td>
+        <td>573.3333333333334</td>
+        <td>326.6666666666667</td>
+      </tr>
+      <tr>
+        <td>Actual Output</td>
+        <td>573.3333333333334</td>
+        <td>326.6666666666667</td>
+      </tr>
+      <tr>
+        <td>Difference</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+    </table>
+    
+    <p><strong>Validation:</strong> Passed (tolerance: 0.00001)</p>
+  </div>
+
+  <div class="result valid">
+    <h3>Logical to Browser Transformation</h3>
+    
+    <h4>Mathematical Formula</h4>
+    <div class="formula">
+      <p>Symbolic: x*dpiScaling, y*dpiScaling</p>
+      <p>LaTeX: \(x_{l_i} \cdot \sigma_i, y_{l_i} \cdot \sigma_i\)</p>
+    </div>
+    
+    <h4>Parameters</h4>
+    <ul>
+      <li><span class="parameter">dpiScaling</span>: 1.5</li>
+    </ul>
+    
+    <h4>Calculation Results</h4>
+    <table>
+      <tr>
+        <th>Calculation</th>
+        <th>x</th>
+        <th>y</th>
+      </tr>
+      <tr>
+        <td>Input</td>
+        <td>573.33</td>
+        <td>326.67</td>
+      </tr>
+      <tr>
+        <td>Symbolic Output</td>
+        <td>859.9950000000001</td>
+        <td>490.005</td>
+      </tr>
+      <tr>
+        <td>Actual Output</td>
+        <td>859.9950000000001</td>
+        <td>490.005</td>
+      </tr>
+      <tr>
+        <td>Difference</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+    </table>
+    
+    <p><strong>Validation:</strong> Passed (tolerance: 0.00001)</p>
+  </div>
+
+  <div class="footer">
+    <p>Generated on 31/05/2025 by BrowserCoordinateKit</p>
+  </div>
+</body>
+</html>

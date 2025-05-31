@@ -1,0 +1,163 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{float}
+
+\title{Symbolic Mathematics in BrowserCoordinateKit}
+\author{BrowserCoordinateKit}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+This document contains the symbolic mathematical expressions extracted from the BrowserCoordinateKit codebase.
+It establishes the mapping between the formal mathematical foundations in \texttt{MathematicalFoundationsPhase2.tex}
+and their practical implementation in code.
+
+\section{Implementation Coverage}
+
+The implementation covers 0 out of 6 theorems 
+(0.0\%). 
+Of these, 0 implementations have been formally verified.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Theorem} & \textbf{Implemented} & \textbf{Verified} & \textbf{Implementation} \\
+\hline
+unknown & No & No & - \\
+unknown & No & No & - \\
+unknown & No & No & - \\
+unknown & No & No & - \\
+unknown & No & No & - \\
+unknown & No & No & - \\
+\hline
+\end{tabular}
+\caption{Implementation Coverage}
+\end{table}
+
+\section{Screen Normalizing Transformations}
+
+\subsection{Screen-to-Normalized Coordinate Transformation}
+
+\textbf{From Theorem 1 in Mathematical Foundations}
+
+\textbf{Equation (1)}
+
+\begin{align}
+T_{S_i \to N}(\bm{p}_{s_i}) = \left(\frac{x_{s_i}}{s_{wi}}, \frac{y_{s_i}}{s_{hi}}\right) = \bm{p}_n
+\end{align}
+
+\textbf{Parameters:}
+
+\begin{itemize}
+\item $p_(s_i)$: Point in screen coordinates
+\item $s_(wi)$: Screen width
+\item $s_(hi)$: Screen height
+\item $p_n$: Point in normalized coordinates
+\end{itemize}
+
+\textbf{Implementation:}
+
+\begin{lstlisting}[language=TypeScript, basicstyle=\small\ttfamily]
+From Extended_Mathematical_Framework_for_Browser_Position_Calculation.tex
+\end{lstlisting}
+
+Source: \texttt{Extended_Mathematical_Framework_for_Browser_Position_Calculation.tex:117}
+
+\subsection{Normalized-to-Screen Coordinate Transformation}
+
+\textbf{From Theorem 1 in Mathematical Foundations}
+
+\textbf{Equation (2)}
+
+\begin{align}
+T_{N \to S_i}(\bm{p}_n) = (x_n \cdot s_{wi}, y_n \cdot s_{hi}) = \bm{p}_{s_i}
+\end{align}
+
+\textbf{Parameters:}
+
+\begin{itemize}
+\item $p_n$: Point in normalized coordinates
+\item $s_(wi)$: Screen width
+\item $s_(hi)$: Screen height
+\item $p_(s_i)$: Point in screen coordinates
+\end{itemize}
+
+\textbf{Implementation:}
+
+\begin{lstlisting}[language=TypeScript, basicstyle=\small\ttfamily]
+From Extended_Mathematical_Framework_for_Browser_Position_Calculation.tex
+\end{lstlisting}
+
+Source: \texttt{Extended_Mathematical_Framework_for_Browser_Position_Calculation.tex:124}
+
+\section{Browser Position Transformations}
+
+\subsection{Screen-to-Browser Coordinate Transformation}
+
+\textbf{From Theorem 2 in Mathematical Foundations}
+
+\textbf{Equation (3)}
+
+\begin{align}
+T_{S_i \to B_i}(\bm{p}_{s_i}) = \bm{p}_{s_i} - \bm{b}_i = (x_{s_i} - b_{xi}, y_{s_i} - b_{yi}) = \bm{p}_{b_i}
+\end{align}
+
+\textbf{Parameters:}
+
+\begin{itemize}
+\item $p_(s_i)$: Point in screen coordinates
+\item $b_i$: Browser window position
+\item $p_(b_i)$: Point in browser coordinates
+\end{itemize}
+
+\textbf{Implementation:}
+
+\begin{lstlisting}[language=TypeScript, basicstyle=\small\ttfamily]
+From Extended_Mathematical_Framework_for_Browser_Position_Calculation.tex
+\end{lstlisting}
+
+Source: \texttt{Extended_Mathematical_Framework_for_Browser_Position_Calculation.tex:216}
+
+\section{Dpi Scaling Transformations}
+
+\subsection{Browser-to-Logical Coordinate Transformation (DPI Scaling)}
+
+\textbf{From Theorem 3 in Mathematical Foundations}
+
+\textbf{Equation (4)}
+
+\begin{align}
+T_{B_i \to L_i}(\bm{p}_{b_i}) = \frac{1}{\sigma_i}\bm{p}_{b_i} = \left(\frac{x_{b_i}}{\sigma_i}, \frac{y_{b_i}}{\sigma_i}\right) = \bm{p}_{l_i}
+\end{align}
+
+\textbf{Parameters:}
+
+\begin{itemize}
+\item $p_(b_i)$: Point in browser coordinates
+\item $sigma_i$: DPI scaling factor
+\item $p_(l_i)$: Point in logical coordinates
+\end{itemize}
+
+\textbf{Implementation:}
+
+\begin{lstlisting}[language=TypeScript, basicstyle=\small\ttfamily]
+From Extended_Mathematical_Framework_for_Browser_Position_Calculation.tex
+\end{lstlisting}
+
+Source: \texttt{Extended_Mathematical_Framework_for_Browser_Position_Calculation.tex:242}
+
+\section{Conclusion}
+
+The mathematical expressions documented here form the foundation of the BrowserCoordinateKit system's coordinate transformations.
+Each expression has been carefully implemented to ensure that the code accurately reflects the mathematical model.
+
+\end{document}

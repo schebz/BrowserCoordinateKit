@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BrowserCoordinateKit Mathematical Foundations</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.5; }
+    h1, h2, h3 { color: #333; }
+    .card { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+    .progress { width: 100%; background-color: #e0e0e0; border-radius: 4px; margin: 10px 0; }
+    .progress-bar { height: 20px; background-color: #4CAF50; border-radius: 4px; color: white; text-align: center; }
+    .nav { margin: 20px 0; }
+    .nav a { margin-right: 15px; text-decoration: none; }
+    .overview { background-color: #f9f9f9; padding: 15px; border-radius: 5px; }
+    .footer { margin-top: 40px; border-top: 1px solid #ddd; padding-top: 10px; color: #777; }
+  </style>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <h1>BrowserCoordinateKit Mathematical Foundations</h1>
+  <p>This page provides an overview of the mathematical foundations of the BrowserCoordinateKit library.</p>
+
+  <div class="nav">
+    <a href="validation/validation.html">Symbolic Validations</a>
+    <a href="visualizations/index.html">Visualizations</a>
+  </div>
+  
+  <div class="card">
+    <h2>Symbolic Validation Summary</h2>
+    <p>6 of 6 transformations validated successfully.</p>
+    <div class="progress">
+      <div class="progress-bar" style="width: 100.0%">
+        100.0%
+      </div>
+    </div>
+  </div>
+  
+  <div class="overview">
+    <h2>Mathematical Foundation Overview</h2>
+    <p>The BrowserCoordinateKit library is based on a rigorous mathematical framework for calculating 
+    positions in browser windows, taking into account display and browser properties:</p>
+    
+    <h3>Coordinate Systems</h3>
+    <ol>
+      <li><strong>Screen Coordinates (S)</strong>: Physical pixel positions on the screen, with origin at the top-left</li>
+      <li><strong>Normalized Coordinates (N)</strong>: Screen-size independent positions in the range [0,1]</li>
+      <li><strong>Browser Coordinates (B)</strong>: Physical pixel positions relative to the browser window top-left</li>
+      <li><strong>Logical Coordinates (L)</strong>: Browser-internal coordinates after DPI scaling</li>
+    </ol>
+    
+    <h3>Key Transformations</h3>
+    <ul>
+      <li><strong>Screen ↔ Normalized</strong>: \(T_{S \to N}(p_s) = (x_s/s_w, y_s/s_h)\)</li>
+      <li><strong>Screen ↔ Browser</strong>: \(T_{S \to B}(p_s) = p_s - b = (x_s - b_x, y_s - b_y)\)</li>
+      <li><strong>Browser ↔ Logical</strong>: \(T_{B \to L}(p_b) = p_b/\sigma = (x_b/\sigma, y_b/\sigma)\)</li>
+    </ul>
+  </div>
+  
+  <div class="footer">
+    <p>Generated on 31/05/2025 by BrowserCoordinateKit</p>
+  </div>
+</body>
+</html>

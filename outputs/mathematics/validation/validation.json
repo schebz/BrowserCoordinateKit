@@ -1,0 +1,178 @@
+{
+  "validationResults": [
+    {
+      "name": "Screen to Normalized",
+      "input": {
+        "x": 960,
+        "y": 540
+      },
+      "symbolicOutput": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "actualOutput": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "difference": {
+        "x": 0,
+        "y": 0
+      },
+      "isValid": true,
+      "tolerance": 0.00001,
+      "parameters": {
+        "screenDimensions": {
+          "width": 1920,
+          "height": 1080
+        }
+      },
+      "symbolicFormula": "x/width, y/height",
+      "latexFormula": "\\frac{x_{s_i}}{s_{wi}}, \\frac{y_{s_i}}{s_{hi}}"
+    },
+    {
+      "name": "Normalized to Screen",
+      "input": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "symbolicOutput": {
+        "x": 960,
+        "y": 540
+      },
+      "actualOutput": {
+        "x": 960,
+        "y": 540
+      },
+      "difference": {
+        "x": 0,
+        "y": 0
+      },
+      "isValid": true,
+      "tolerance": 0.00001,
+      "parameters": {
+        "screenDimensions": {
+          "width": 1920,
+          "height": 1080
+        }
+      },
+      "symbolicFormula": "x*width, y*height",
+      "latexFormula": "x_n \\cdot s_{wi}, y_n \\cdot s_{hi}"
+    },
+    {
+      "name": "Screen to Browser",
+      "input": {
+        "x": 960,
+        "y": 540
+      },
+      "symbolicOutput": {
+        "x": 860,
+        "y": 490
+      },
+      "actualOutput": {
+        "x": 860,
+        "y": 490
+      },
+      "difference": {
+        "x": 0,
+        "y": 0
+      },
+      "isValid": true,
+      "tolerance": 0.00001,
+      "parameters": {
+        "browserPosition": {
+          "x": 100,
+          "y": 50
+        }
+      },
+      "symbolicFormula": "x - browserX, y - browserY",
+      "latexFormula": "x_{s_i} - b_{xi}, y_{s_i} - b_{yi}"
+    },
+    {
+      "name": "Browser to Screen",
+      "input": {
+        "x": 860,
+        "y": 490
+      },
+      "symbolicOutput": {
+        "x": 960,
+        "y": 540
+      },
+      "actualOutput": {
+        "x": 960,
+        "y": 540
+      },
+      "difference": {
+        "x": 0,
+        "y": 0
+      },
+      "isValid": true,
+      "tolerance": 0.00001,
+      "parameters": {
+        "browserPosition": {
+          "x": 100,
+          "y": 50
+        }
+      },
+      "symbolicFormula": "x + browserX, y + browserY",
+      "latexFormula": "x_{b_i} + b_{xi}, y_{b_i} + b_{yi}"
+    },
+    {
+      "name": "Browser to Logical",
+      "input": {
+        "x": 860,
+        "y": 490
+      },
+      "symbolicOutput": {
+        "x": 573.3333333333334,
+        "y": 326.6666666666667
+      },
+      "actualOutput": {
+        "x": 573.3333333333334,
+        "y": 326.6666666666667
+      },
+      "difference": {
+        "x": 0,
+        "y": 0
+      },
+      "isValid": true,
+      "tolerance": 0.00001,
+      "parameters": {
+        "dpiScaling": 1.5
+      },
+      "symbolicFormula": "x/dpiScaling, y/dpiScaling",
+      "latexFormula": "\\frac{x_{b_i}}{\\sigma_i}, \\frac{y_{b_i}}{\\sigma_i}"
+    },
+    {
+      "name": "Logical to Browser",
+      "input": {
+        "x": 573.33,
+        "y": 326.67
+      },
+      "symbolicOutput": {
+        "x": 859.9950000000001,
+        "y": 490.005
+      },
+      "actualOutput": {
+        "x": 859.9950000000001,
+        "y": 490.005
+      },
+      "difference": {
+        "x": 0,
+        "y": 0
+      },
+      "isValid": true,
+      "tolerance": 0.00001,
+      "parameters": {
+        "dpiScaling": 1.5
+      },
+      "symbolicFormula": "x*dpiScaling, y*dpiScaling",
+      "latexFormula": "x_{l_i} \\cdot \\sigma_i, y_{l_i} \\cdot \\sigma_i"
+    }
+  ],
+  "summary": {
+    "total": 6,
+    "valid": 6,
+    "invalid": 0,
+    "timestamp": "2025-05-31T09:52:16.627Z"
+  }
+}

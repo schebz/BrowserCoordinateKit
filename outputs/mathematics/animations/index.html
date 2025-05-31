@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BrowserCoordinateKit Animated Visualizations</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .card { border: 1px solid #ccc; margin: 20px 0; padding: 15px; border-radius: 5px; }
+    .animation { text-align: center; margin: 15px 0; }
+    img { max-width: 100%; border: 1px solid #eee; }
+    .nav { margin: 20px 0; }
+    .nav a { margin-right: 15px; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <h1>BrowserCoordinateKit Animated Visualizations</h1>
+  <p>This page contains animated GIFs that demonstrate the coordinate transformations in BrowserCoordinateKit.</p>
+  
+  <div class="nav">
+    <a href="../index.html">Mathematical Overview</a>
+    <a href="../validation/validation.html">Symbolic Validations</a>
+    <a href="../calibration/index.html">Calibration System</a>
+  </div>
+  
+  <div class="card">
+    <h2>Screen to Normalized Transformation</h2>
+    <p>The Screen-to-Normalized transformation converts physical screen coordinates to normalized [0,1] coordinates that are independent of screen size.</p>
+    <p>Formula: <code>T_{S→N}(p_s) = (x_s/s_w, y_s/s_h)</code></p>
+    <div class="animation">
+      <img src="screen_to_normalized.gif" alt="Screen to Normalized Animation" />
+    </div>
+  </div>
+  
+  <div class="card">
+    <h2>Screen to Browser Transformation</h2>
+    <p>The Screen-to-Browser transformation converts screen coordinates to browser window coordinates by subtracting the browser position.</p>
+    <p>Formula: <code>T_{S→B}(p_s) = p_s - b = (x_s - b_x, y_s - b_y)</code></p>
+    <div class="animation">
+      <img src="screen_to_browser.gif" alt="Screen to Browser Animation" />
+    </div>
+  </div>
+  
+  <div class="card">
+    <h2>Browser to Logical Transformation (DPI Scaling)</h2>
+    <p>The Browser-to-Logical transformation applies DPI scaling to convert physical browser coordinates to logical coordinates.</p>
+    <p>Formula: <code>T_{B→L}(p_b) = p_b/σ = (x_b/σ, y_b/σ)</code></p>
+    <div class="animation">
+      <img src="browser_to_logical.gif" alt="Browser to Logical Animation" />
+    </div>
+  </div>
+  
+  <div class="card">
+    <h2>Composite Transformation Pipeline</h2>
+    <p>This animation shows how the different transformations can be composed to convert between various coordinate systems.</p>
+    <p>Formula: <code>T_{S→L}(p_s) = T_{B→L}(T_{S→B}(p_s)) = (p_s - b)/σ</code></p>
+    <div class="animation">
+      <img src="composite_transformation.gif" alt="Composite Transformation Animation" />
+    </div>
+  </div>
+  
+  <div class="card">
+    <h2>Calibration Process</h2>
+    <p>This animation demonstrates the calibration process, from generating calibration points to applying the calibration to correct positional errors.</p>
+    <div class="animation">
+      <img src="calibration_process.gif" alt="Calibration Process Animation" />
+    </div>
+  </div>
+  
+  <div class="footer">
+    <p>These animations were generated using Python's matplotlib library to demonstrate the coordinate transformations implemented in BrowserCoordinateKit.</p>
+  </div>
+</body>
+</html>
